@@ -4,6 +4,7 @@ RUN VERSION=v1.0.4; \
     apk add --no-cache ca-certificates curl; \
     curl "https://caddyserver.com/download/linux/amd64?license=personal&telemetry=off&version=${VERSION}" -o caddy.tar.gz; \
     tar -zxvf caddy.tar.gz caddy; \
+    rm -rf caddy.tar.gz ; \
     mv caddy /usr/local/bin/
 
 COPY Caddyfile /etc/Caddyfile
